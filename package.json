@@ -8,11 +8,13 @@
     "build": "tsc && vite build --base=/mangosteen-font-react",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   },
   "dependencies": {
     "@types/styled-components": "5.1.26",
     "classnames": "2.3.2",
+    "conventional-changelog": "3.1.25",
     "cz-conventional-changelog": "3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
