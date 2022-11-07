@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Navigate } from 'react-router-dom'
+import { useLocalStore } from '../stores/useLocalStore'
 export const Root: React.FC = () => {
-  const hasRead = localStorage.getItem('hasReadWelcomes')
-  return hasRead === 'yes' ? <Navigate to='/home'/> : <Navigate to="/welcome/1" />
+  const { hasReadWelcomes } = useLocalStore()
+  return hasReadWelcomes ? <Navigate to='/home'/> : <Navigate to="/welcome/1" />
 }
