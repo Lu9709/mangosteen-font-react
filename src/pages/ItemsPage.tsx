@@ -39,7 +39,7 @@ export const ItemsPage: React.FC = () => {
   const [visible, setVisible] = useState(false)
   return (
     <div>
-      <menuContext.Provider value={{ setVisible }}>
+      <menuContext.Provider value={{ setVisible: () => { setVisible(!visible) } }}>
         <Div>
           <TopNav />
           <TimeRangePicker selected={timeRange} onSelected={setTimeRange} />
