@@ -6,6 +6,9 @@ import { svgsprites } from './vite_plugins/svgsprites'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
+  server: {
+    hmr: false
+  },
   define: {
     isDev: command === 'serve'
   },
