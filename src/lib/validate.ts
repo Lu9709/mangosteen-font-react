@@ -81,16 +81,18 @@ function isEmpty(value: undefined | JSONValue | Data): boolean {
 }
 
 export function hasError(errors?: Record<string, string[]>) {
-  // return Object.values(errors)
-  // .reduce((result, value) => result + value.length, 0) > 0
-  if (!errors)
-    return false
-  let result = false
-  for (const key in errors) {
-    if (errors[key]?.length > 0) {
-      result = true
-      break
-    }
-  }
-  return result
+  return errors
+    ? Object.values(errors)
+      .reduce((result, value) => result + value.length, 0) > 0
+    : false
+  // if (!errors)
+  //   return false
+  // let result = false
+  // for (const key in errors) {
+  //   if (errors[key]?.length > 0) {
+  //     result = true
+  //     break
+  //   }
+  // }
+  // return result
 }
