@@ -34,7 +34,6 @@ export const useSignInStore = create<SignIn>((set, get) => ({
     set(state => ({
       ...state,
       error: {
-        ...state.error,
         ...error
       }
     }))
