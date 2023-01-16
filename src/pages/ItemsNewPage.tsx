@@ -4,13 +4,15 @@ import { Gradient } from '../components/Gradient'
 import { Icon } from '../components/Icon'
 import { Tabs } from '../components/Tabs'
 import { TopNav } from '../components/TopNav'
+import { Tags } from './ItemNewPage/Tags'
 import s from './ItemsNewPage.module.scss'
 
-type ItemKind = 'income' | 'expenses'
-type TabItem = { key: ItemKind; text: string; element?: ReactNode }[]
 export const ItemsNewPage: React.FC = () => {
-  const tabItems: TabItem = [{ key: 'expenses', text: '支出' }, { key: 'income', text: '收入' }]
-  const [tabItem, useTabItem] = useState<ItemKind>('expenses')
+  const tabItems: { key: Item['kind']; text: string; element?: ReactNode }[] = [
+    { key: 'expenses', text: '支出', element: <Tags kind='expenses' /> },
+    { key: 'income', text: '收入', element: <Tags kind='income' /> }
+  ]
+  const [tabItem, useTabItem] = useState<Item['kind']>('expenses')
   return (
     <div className={s.wrapper}>
       <Gradient>
